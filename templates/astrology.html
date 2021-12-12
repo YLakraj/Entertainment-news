@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+           .menu-icon{
+            flex: 1;
+            align-items: center;
+            text-align: right;
+        }
+        .menu-icon img{
+            width: 40px;
+            margin-left: 40px;
+            cursor: pointer;
+        }
+        .navbar{
+            width:87%;
+            display:flex;
+            align-items: center;
+            margin: 35px auto;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: purple;">
+   <div class="navbar">
+                <div class="logo">
+                    <h1>SPACE AND ASTRONOMY</h1>
+                </div>
+                <div class="menu-icon">
+
+                   <a href="/astrology"> <img src="static/images/astrology.jpg"></a>
+                   <a href="/entertainment"> <img src="static/images/entertain.jpg"></a>
+                    <a href="/techology"><img src="static/images/techlogo.jpg"></a>
+                    <a href="/weather"><img src="static/images/weat.jpg"></a>
+                    <a href="/"><img src="static/images/logout.jpg"></a>
+                </div>
+            </div>
+<h1>welcome to space and Astronomy page</h1>
+
+<div style="border : solid 2px; background-color: black;">
+    <center>
+        <h1>News App</h1>
+    </center>
+</div>
+<div>
+    {% for i in case.articles%}
+    <div>
+
+        <h3><strong style="color:yellow;">Author:</strong></h3>{{i.author}}
+        <h3><strong style="color:yellow;">Title:</strong></h3>{{i.title}}
+        <h3><strong style="color:yellow;">Description:</strong></h3>{{i.description}}
+        <img src="{{i.urlToImage}}" width="80%" height="240%"/>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
